@@ -1,0 +1,43 @@
+<section id="logo-sect">
+  <div class="container-custom">
+    <div class="row">
+      <div class="logos-wrap">
+        {% for block in section.blocks %}
+          <div class="logo-inner">
+            <img src="{{ block.settings.logo_image | img_url }}" alt="{{ block.settings.alt }}">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logos section new",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image_picker",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos section new",
+      "blocks": [
+        {
+          "type": "image_picker"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
