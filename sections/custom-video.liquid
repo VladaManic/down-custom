@@ -1,0 +1,27 @@
+{% assign video = section.settings.video %}
+
+<section id="video-sec">
+  <div class="custom-container-fluid">
+    <div class="row">
+      {{ video | video_tag: controls: true }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video section new",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video section new"
+    }
+  ]
+}
+{% endschema %}
