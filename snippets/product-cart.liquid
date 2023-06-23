@@ -1,0 +1,12 @@
+<div class="prod-wrap">
+  {% if product_product.featured_image %}
+    <div class="img-wrap">
+      <img src="{{ product_product.featured_image | img_url: '600x600' }}" alt="{{ product_product.title }}">
+    </div>
+  {% endif %}
+  <div class="prod-info">
+    <p class="prod-name">{{ product_product.title }}</p>
+    <p class="prod-value">{{ product_product.price | money }}</p>
+    <a href="{{ product_product.url }}" class="choose-option">Choose option</a>
+  </div>
+</div>

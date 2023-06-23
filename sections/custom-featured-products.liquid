@@ -1,0 +1,35 @@
+<section class="featur-prods">
+  <div class="container-custom">
+    <div class="row">
+      <h2>{{ section.settings.title }}</h2>
+      <div class="featur-wrap">
+        {% for product in section.settings.featured_collection.products %}
+          {% render 'product-cart', product_product: product %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured products new",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products"
+    }
+  ]
+}
+{% endschema %}
