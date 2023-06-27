@@ -1,0 +1,10 @@
+<div class="coll-wrap">
+  <img
+    class="featur-coll"
+    src="{{ block_block.settings.collection_id.featured_image | img_url: '1000x1000' }}"
+    alt="{{ block_block.settings.collection_id.title | escape }}"
+  >
+  <p class="coll-title">{{ block_block.settings.collection_id.title }}</p>
+  <p class="coll-descr">{{ block_block.settings.collection_id.description | truncatewords: 15 }}</p>
+  <a href="{{ block_block.settings.collection_id.url }}" class="cta-coll">Browse collection</a>
+</div>
